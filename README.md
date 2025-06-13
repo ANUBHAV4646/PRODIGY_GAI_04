@@ -12,12 +12,12 @@ The objective of this task is to implement a neural style transfer pipeline that
 
 # Key Concepts Used
 
-# 🔹 Content vs Style
+# Content vs Style
 Content Image: The base image whose structure we want to preserve.
 
 Style Image: The artistic image whose style (colors, textures) we want to extract and apply.
 
-# 🔹 Pretrained VGG19 Network
+# Pretrained VGG19 Network
 A VGG19 convolutional neural network pretrained on ImageNet is used.
 
 Certain intermediate layers are chosen to extract features:
@@ -26,14 +26,14 @@ Early layers capture style (colors, brush strokes).
 
 Deeper layers retain content (shapes, structure).
 
-# 🔹 Loss Functions
+# Loss Functions
 Content Loss: Measures how similar the generated image is to the content image.
 
 Style Loss: Measures the similarity between the style features (via Gram Matrix) of generated and style images.
 
 Total Loss = content_weight * content_loss + style_weight * style_loss
 
-# 🔹 Optimization
+# Optimization
 The generated image is initialized as a copy of the content image.
 
 Using gradient descent (Adam Optimizer), we iteratively update the generated image to minimize the total loss.
@@ -100,7 +100,7 @@ Saved locally as a .png file with a timestamped name.
 
 Also allows downloading the image using google.colab.files.
 
-⚙️ How to Run
+# How to Run
 Open the notebook on Google Colab or any Jupyter environment.
 
 Upload your content and style images (JPG or PNG).
@@ -111,15 +111,6 @@ Output image will be saved and available for download.
 
 # Requirements
 Install dependencies if running locally:
+"pip install torch torchvision matplotlib pillow"
 
-bash
-Copy
-Edit
-pip install torch torchvision matplotlib pillow
-🔗 Output Sample
-The result is a beautiful fusion of the two images where:
-
-The structure remains from the content image
-
-The textures and colors reflect the style image
 
